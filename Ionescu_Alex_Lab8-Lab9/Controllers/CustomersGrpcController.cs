@@ -94,5 +94,24 @@ namespace Ionescu_Alex_Lab2.Controllers
             }
             return View(customer);
         }
+
+       
+        public IActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var client = new CustomerService.CustomerServiceClient(channel);
+            Customer customer = client.Get(new CustomerId() { Id = (int)id });
+            if (customer == null)
+            {
+                return NotFound();
+            }
+            return View(customer);
+        }
+
+
+
     }
 }
