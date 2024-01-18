@@ -89,7 +89,7 @@ namespace Ionescu_Alex_Lab2.Controllers
             if (ModelState.IsValid)
             {
                 var client = new CustomerService.CustomerServiceClient(channel);
-                //Empty response = client.Update(customer);
+                Empty response = client.Update(customer);
                 return RedirectToAction(nameof(Index));
             }
             return View(customer);

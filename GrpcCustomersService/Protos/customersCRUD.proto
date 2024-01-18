@@ -5,7 +5,7 @@ service CustomerService {
  rpc GetAll (Empty) returns (CustomerList) {}
  rpc Get (CustomerId) returns (Customer) {}
  rpc Insert (Customer) returns (Empty) {}
- rpc Update (Customer) returns (Customer) {}
+ rpc Update (Customer) returns (Empty) {}
  rpc Delete (CustomerId) returns (Empty) {}
 }
 message Empty {}
